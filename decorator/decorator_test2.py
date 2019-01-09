@@ -1,12 +1,12 @@
 from functools import wraps
 
 
-def function_test(function):
-	@wraps(function)
+def function_test(functions):
+	@wraps(functions)
 	def wrapper(*args, **kwargs):
-		print("Before function:{}".format(function))
-		info = function(*args, **kwargs)
-		print("After function:{}".format(function))
+		print("Before function:{}".format(functions))
+		info = functions(*args, **kwargs)
+		print("After function:{}".format(functions))
 		return info
 	
 	return wrapper
